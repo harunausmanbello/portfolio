@@ -3,8 +3,7 @@ import * as React from "react";
 import * as Icon from "lucide-react";
 import * as Sheet from "@/components/ui/sheet";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Flex } from "@radix-ui/themes";
+import { Box, Flex } from "@radix-ui/themes";
 import { menuList } from "@/data";
 
 export default function NavigationSheet() {
@@ -23,15 +22,13 @@ export default function NavigationSheet() {
   return (
     <Sheet.Sheet open={isOpen} onOpenChange={setIsOpen}>
       <Sheet.SheetTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="shrink-0 md:hidden ml-auto size-8"
-          onClick={() => setIsOpen(true)}
-        >
-          <Icon.Menu className="h-3 w-3" />
+        <Box className="ml-auto">
+          <Icon.Menu
+            className="shrink-0 md:hidden sm:size-8"
+            onClick={() => setIsOpen(true)}
+          />
           <span className="sr-only">Toggle navigation menu</span>
-        </Button>
+        </Box>
       </Sheet.SheetTrigger>
       <Sheet.SheetContent>
         <Sheet.SheetHeader className="border-b mb-5">
