@@ -1,8 +1,9 @@
 import * as React from "react";
+import Header from "@/components/header";
 import HomePage from "@/components/home-page";
 import AboutPage from "@/components/about-page";
-import { Header } from "@/components/header";
 import SkillsPage from "@/components/skills-page";
+import PortfolioPage from "@/components/portfoli-page";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <HomePage />
       <AboutPage />
       <SkillsPage />
+      <PortfolioPage />
     </>
   );
 }

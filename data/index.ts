@@ -48,4 +48,64 @@ const skills = [
   },
 ];
 
-export { menuList, skills };
+const portfolio = [
+  {
+    category: "Web",
+    project: [
+      {
+        name: "Web 1",
+        technologiesUsed: ["Nodejs", "PostgreSQL"],
+        websiteLink: "PHP",
+        gibhubLink: "C#",
+        image: "/project-picture.png",
+      },
+      {
+        name: "Web 2",
+        technologiesUsed: ["React", "Nodejs"],
+        websiteLink: "example.com",
+        gibhubLink: "github.com/example",
+        image: "/project-picture.png",
+      },
+    ],
+  },
+  {
+    category: "Mobile",
+    project: [
+      {
+        name: "Mobile 1",
+        technologiesUsed: ["TypeScript", "MySQL"],
+        websiteLink: "PHP",
+        gibhubLink: "C#",
+        image: "/project-picture.png",
+      },
+      {
+        name: "Mobile 2",
+        technologiesUsed: ["Flutter", "Firebase"],
+        websiteLink: "example.com",
+        gibhubLink: "github.com/example",
+        image: "/project-picture.png",
+      },
+    ],
+  },
+  {
+    category: "Desktop",
+    project: [
+      {
+        name: "Desktop 1",
+        technologiesUsed: ["TypeScript", "MongoDb"],
+        websiteLink: "localhost:3000",
+        gibhubLink: "localhost:3000",
+        image: "/project-picture.png",
+      },
+      {
+        name: "Desktop 2",
+        technologiesUsed: ["Electron", "Nodejs"],
+        websiteLink: "example.com",
+        gibhubLink: "github.com/example",
+        image: "/project-picture.png",
+      },
+    ],
+  },
+];
+
+export { menuList, skills, portfolio };
