@@ -24,7 +24,7 @@ const AboutPage = () => {
             gridColumn={{ initial: "1", sm: "1" }}
           >
             <Heading as={"h1"} className="text-[35px]">
-              About Haruna
+              About
             </Heading>
           </Flex>
 
