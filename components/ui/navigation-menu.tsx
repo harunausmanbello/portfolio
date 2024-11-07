@@ -3,10 +3,11 @@ import { usePathname } from "next/navigation";
 import NextLink from "next/link";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { menuList } from "@/data";
+import { ReactNode } from "react";
 
 interface LinkProps {
   href: string;
-  [key: string]: any;
+  [key: string]: ReactNode;
 }
 
 const Link: React.FC<LinkProps> = ({ href, ...props }) => {
@@ -20,7 +21,7 @@ const Link: React.FC<LinkProps> = ({ href, ...props }) => {
   );
 };
 
-export default () => (
+export const NavMenu = () => (
   <NavigationMenu.Root className="hidden md:block ml-auto">
     <NavigationMenu.List className="flex gap-10 items-center ">
       {menuList.map((item, index) => (

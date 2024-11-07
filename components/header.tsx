@@ -1,8 +1,8 @@
 "use client";
 import * as React from "react";
-import NavigationMenu from "@/components/ui/navigation-menu";
 import NavigationSheet from "@/components/ui/navigation-sheet";
 import { Section } from "@radix-ui/themes";
+import { NavMenu } from "@/components/ui/navigation-menu";
 export const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -21,7 +21,7 @@ export const Header = () => {
       }`}
     >
       <NavigationSheet />
-      <NavigationMenu />
+      <NavMenu />
     </Section>
   );
 };

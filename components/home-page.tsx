@@ -73,8 +73,7 @@ const HomePage = () => {
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
-                  <RadixIcon.ChatBubbleIcon className="w-7 h-7" />
-                  Let&apos;s Talk
+                  Hire Me!
                 </Link>
               </Button>
             </Flex>
