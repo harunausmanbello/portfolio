@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import * as RadixIcon from "@radix-ui/react-icons";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const HomePage = () => {
   return (
-    <Container className="min-h-fit bg-[#0f172a] text-primary">
+    <Container id={"home"} className="min-h-fit bg-[#0f172a] text-primary">
       <Section>
         <Grid columns={{ initial: "1", sm: "2" }}>
           <Flex
@@ -64,7 +65,9 @@ const HomePage = () => {
             >
               <Button className="w-fit xxs:w-fit ">
                 <RadixIcon.DownloadIcon className="w-7 h-7" />
-                Download Resumé
+                <Link href={"resumé.pdf"} target="_blank">
+                  View Resumé
+                </Link>
               </Button>
               <Button asChild>
                 <Link

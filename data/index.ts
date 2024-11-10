@@ -4,7 +4,6 @@ const menuList = [
   { href: "#skills", label: "Skills" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#resume", label: "Resume" },
-  { href: "#blog", label: "Blog" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -54,8 +53,8 @@ const portfolio = [
     project: [
       {
         name: "Web 1",
-        technologiesUsed: ["Nodejs", "PostgreSQL"],
-        websiteLink: "PHP",
+        technologiesUsed: ["Nodejs", "PostgreSQL","PostgreSQL","PostgreSQL"],
+        websiteLink: "https://portal.iaec-university.tg/",
         gibhubLink: "C#",
         image: "/project-picture.png",
       },

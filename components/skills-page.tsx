@@ -15,7 +15,10 @@ import { SkillsLevel } from "@/components/ui/skills-level";
 
 const SkillsPage = () => {
   return (
-    <Container className="min-h-fit bg-[#0f172a]/95 text-primary group">
+    <Container
+      id={"skills"}
+      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+    >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex

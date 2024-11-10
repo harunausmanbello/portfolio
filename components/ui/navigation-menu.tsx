@@ -1,7 +1,7 @@
 "use client";
-import { usePathname } from "next/navigation";
-import NextLink from "next/link";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 import { menuList } from "@/data";
 import { ReactNode } from "react";
 

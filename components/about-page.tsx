@@ -14,10 +14,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-
 const AboutPage = () => {
   return (
-    <Container className="min-h-fit bg-[#0f172a]/95 text-primary group">
+    <Container
+      id={"about"}
+      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+    >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex

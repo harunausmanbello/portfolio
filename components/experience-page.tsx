@@ -13,7 +13,10 @@ import { Button } from "@/components/ui/button";
 
 const ExperiencePage = () => {
   return (
-    <Container className="min-h-fit bg-[#0f172a]/95 text-primary group">
+    <Container
+      id={"resume"}
+      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+    >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex

@@ -18,11 +18,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 const ContactPage = () => {
   const form = contactInfoUseForm();
   return (
-    <Container className="min-h-fit bg-[#0f172a]/95 text-primary group">
+    <Container
+      id={"contact"}
+      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+    >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex
@@ -39,96 +43,102 @@ const ContactPage = () => {
               as="div"
               className="border-b-2 border-primary w-1/5 group-hover:w-10/12"
             ></Box>
-            <Card className="shadow-2xl h-fit bg-primary text-center hover:scale-105">
-              <CardHeader>
-                <CardTitle>
-                  <Flex
-                    direction={"column"}
-                    align={"center"}
-                    justify={"center"}
+            <Link href={"mailto:harunausmanbello204@gmail.com"} target="_blank">
+              <Card className="shadow-2xl h-fit bg-primary text-center hover:scale-105">
+                <CardHeader>
+                  <CardTitle>
+                    <Flex
+                      direction={"column"}
+                      align={"center"}
+                      justify={"center"}
+                    >
+                      <MailIcon />
+                      <Heading as="h1" align={"center"} size={"5"}>
+                        Email
+                      </Heading>
+                    </Flex>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Text as="p" className="text-balance -mt-5" size={"1"}>
+                    harunausmanbello204@gmail.com
+                  </Text>
+                  <Text
+                    as="p"
+                    className="text-balance  text-muted-foreground"
+                    size={"1"}
                   >
-                    <MailIcon />
-                    <Heading as="h1" align={"center"} size={"5"}>
-                      Email
-                    </Heading>
-                  </Flex>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Text as="p" className="text-balance -mt-5" size={"1"}>
-                  harunausmanbello204@gmail.com
-                </Text>
-                <Text
-                  as="p"
-                  className="text-balance  text-muted-foreground"
-                  size={"1"}
-                >
-                  Click to Send Message
-                </Text>
-              </CardContent>
-            </Card>
-            <Card className="shadow-2xl h-fit bg-primary text-center hover:scale-105">
-              <CardHeader>
-                <CardTitle>
-                  <Flex
-                    direction={"column"}
-                    align={"center"}
-                    justify={"center"}
+                    Click to Send Message
+                  </Text>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href={"tel:+2349039083938"} target="_blank">
+              <Card className="shadow-2xl h-fit bg-primary text-center hover:scale-105">
+                <CardHeader>
+                  <CardTitle>
+                    <Flex
+                      direction={"column"}
+                      align={"center"}
+                      justify={"center"}
+                    >
+                      <PhoneIcon />
+                      <Heading as="h1" align={"center"} size={"5"}>
+                        Call
+                      </Heading>
+                    </Flex>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Text
+                    as="p"
+                    className="text-balance -mt-5 text-muted-foreground"
                   >
-                    <PhoneIcon />
-                    <Heading as="h1" align={"center"} size={"5"}>
-                      Call
-                    </Heading>
-                  </Flex>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Text
-                  as="p"
-                  className="text-balance -mt-5 text-muted-foreground"
-                >
-                  +234 903 9083 938
-                </Text>
-                <Text
-                  as="p"
-                  className="text-balance text-muted-foreground"
-                  size={"1"}
-                >
-                  Click to Call
-                </Text>
-              </CardContent>
-            </Card>
-            <Card className="shadow-2xl h-fit bg-primary text-center hover:scale-105">
-              <CardHeader>
-                <CardTitle>
-                  <Flex
-                    direction={"column"}
-                    align={"center"}
-                    justify={"center"}
+                    +234-903-9083-938
+                  </Text>
+                  <Text
+                    as="p"
+                    className="text-balance text-muted-foreground"
+                    size={"1"}
                   >
-                    <ReactIcon.FaWhatsapp />
-                    <Heading as="h1" align={"center"} size={"5"}>
-                      WhatsApp
-                    </Heading>
-                  </Flex>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Text
-                  as="p"
-                  className="text-balance -mt-5 text-muted-foreground"
-                >
-                  +234 903 9083 938
-                </Text>
-                <Text
-                  as="p"
-                  className="text-balance text-muted-foreground"
-                  size={"1"}
-                >
-                  Click to Chat
-                </Text>
-              </CardContent>
-            </Card>
+                    Click to Call
+                  </Text>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href={"https://wa.me/+2349039083938"} target="_blank">
+              <Card className="shadow-2xl h-fit bg-primary text-center hover:scale-105">
+                <CardHeader>
+                  <CardTitle>
+                    <Flex
+                      direction={"column"}
+                      align={"center"}
+                      justify={"center"}
+                    >
+                      <ReactIcon.FaWhatsapp />
+                      <Heading as="h1" align={"center"} size={"5"}>
+                        WhatsApp
+                      </Heading>
+                    </Flex>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Text
+                    as="p"
+                    className="text-balance -mt-5 text-muted-foreground"
+                  >
+                    +234-903-9083-938
+                  </Text>
+                  <Text
+                    as="p"
+                    className="text-balance text-muted-foreground"
+                    size={"1"}
+                  >
+                    Click to Chat
+                  </Text>
+                </CardContent>
+              </Card>
+            </Link>
           </Flex>
 
           <Flex

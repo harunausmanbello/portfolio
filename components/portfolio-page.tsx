@@ -2,7 +2,15 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Container, Section, Grid, Flex, Heading, Box } from "@radix-ui/themes";
+import {
+  Container,
+  Section,
+  Grid,
+  Flex,
+  Heading,
+  Box,
+  Text,
+} from "@radix-ui/themes";
 import {
   Card,
   CardContent,
@@ -16,7 +24,10 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const PortfolioPage = () => {
   const [selectedTab, setSelectedTab] = React.useState("all");
   return (
-    <Container className="min-h-fit bg-[#0f172a]/100 text-primary group">
+    <Container
+      id={"portfolio"}
+      className="min-h-fit bg-[#0f172a]/100 text-primary group"
+    >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex
@@ -93,7 +104,7 @@ const PortfolioPage = () => {
                   item.project.map((projectItems, projectIndex) => (
                     <Card
                       key={`${index}-${projectIndex}`}
-                      className="shadow-2xl bg-primary p-2 min-w-full"
+                      className="shadow-2xl bg-primary p-2 min-w-full flex flex-col"
                     >
                       <CardHeader className="bg-white min-h-40 rounded-sm relative">
                         <Image
@@ -102,9 +113,10 @@ const PortfolioPage = () => {
                           alt="project preview"
                           fill
                           priority
+                          sizes="100"
                         />
                       </CardHeader>
-                      <CardContent>
+                      <CardContent className="flex-grow">
                         <Heading
                           as="h1"
                           align={"left"}
@@ -113,14 +125,18 @@ const PortfolioPage = () => {
                         >
                           {projectItems.name}
                         </Heading>
-                        {/* <Text className="text-sm text-gray-500 text-justify">
-                Technologies: {projectItems.technologiesUsed.join(", ")}
-              </Text> */}
+                        <Text
+                          as="p"
+                          className="text-xs text-gray-500 text-justify"
+                        >
+                          Technologies:{" "}
+                          {projectItems.technologiesUsed.join(", ")}
+                        </Text>
                       </CardContent>
                       <CardFooter className="w-full p-0 gap-5">
                         <Box
                           as="div"
-                          className="flex items-center justify-between w-full gap-5"
+                          className="flex items-center justify-between w-full gap-5 bottom-0"
                         >
                           <Button
                             className="w-full border border-[#0f172a] hover:bg-[#0f172a] hover:text-white"
