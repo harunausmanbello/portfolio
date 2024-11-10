@@ -45,13 +45,13 @@ const AboutPage = () => {
                   >
                     <AwardIcon />
                     <Heading as="h1" align={"center"} size={"5"}>
-                      Projects
+                    Experience
                     </Heading>
                   </Flex>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Text className="gap-0.5 text-balance w-full  text-muted-foreground">
+                <Text as="p" className="text-balance -mt-5  text-muted-foreground">
                   3+ years of Experience
                 </Text>
               </CardContent>
@@ -72,7 +72,7 @@ const AboutPage = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Text className="gap-0.5 text-balance w-full text-muted-foreground">
+                <Text as="p" className="text-balance -mt-5 text-muted-foreground">
                   10+ Completed
                 </Text>
               </CardContent>
