@@ -16,7 +16,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const PortfolioPage = () => {
   const [selectedTab, setSelectedTab] = React.useState("all");
   return (
-    <Container className="min-h-fit bg-[#0f172a]/100 text-primary">
+    <Container className="min-h-fit bg-[#0f172a]/100 text-primary group">
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex
@@ -29,6 +29,10 @@ const PortfolioPage = () => {
             <Heading as={"h1"} className="text-[35px]">
               Portfolio
             </Heading>
+            <Box
+              as="div"
+              className="border-b-2 border-primary w-1/5 group-hover:w-10/12"
+            ></Box>
           </Flex>
 
           <Flex

@@ -8,12 +8,17 @@ import {
   Flex,
   Heading,
   Text,
+  Box,
 } from "@radix-ui/themes";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { skills } from "@/data";
+import { Award, AwardIcon, BadgeCheck, Files, FilesIcon } from "lucide-react";
+import { SkillsLevel } from "./ui/skills-level";
 
 const AboutPage = () => {
   return (
-    <Container className="min-h-fit bg-[#0f172a]/95 text-primary">
+    <Container className="min-h-fit bg-[#0f172a]/95 text-primary group">
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex
@@ -23,9 +28,55 @@ const AboutPage = () => {
             className="px-5 mb-10"
             gridColumn={{ initial: "1", sm: "1" }}
           >
-            <Heading as={"h1"} className="text-[35px]">
+            <Heading as={"h1"} className="text-[35px] ">
               About
             </Heading>
+            <Box
+              as="div"
+              className="border-b-2 border-primary w-1/5 group-hover:w-10/12"
+            ></Box>
+            <Card className="shadow-2xl h-fit bg-primary text-center">
+              <CardHeader>
+                <CardTitle>
+                  <Flex
+                    direction={"column"}
+                    align={"center"}
+                    justify={"center"}
+                  >
+                    <AwardIcon />
+                    <Heading as="h1" align={"center"} size={"5"}>
+                      Projects
+                    </Heading>
+                  </Flex>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Text className="gap-0.5 text-balance w-full  text-muted-foreground">
+                  3+ years of Experience
+                </Text>
+              </CardContent>
+            </Card>
+            <Card className="shadow-2xl h-fit bg-primary text-center">
+              <CardHeader>
+                <CardTitle>
+                  <Flex
+                    direction={"column"}
+                    align={"center"}
+                    justify={"center"}
+                  >
+                    <FilesIcon />
+                    <Heading as="h1" align={"center"} size={"5"}>
+                      Projects
+                    </Heading>
+                  </Flex>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Text className="gap-0.5 text-balance w-full text-muted-foreground">
+                  10+ Completed
+                </Text>
+              </CardContent>
+            </Card>
           </Flex>
 
           <Flex

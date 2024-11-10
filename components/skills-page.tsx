@@ -6,6 +6,7 @@ import {
   Flex,
   Heading,
   Text,
+  Box,
 } from "@radix-ui/themes";
 import {
   Card,
@@ -19,7 +20,7 @@ import { SkillsLevel } from "./ui/skills-level";
 
 const SkillsPage = () => {
   return (
-    <Container className="min-h-fit bg-[#0f172a]/95 text-primary">
+    <Container className="min-h-fit bg-[#0f172a]/95 text-primary group">
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
           <Flex
@@ -32,6 +33,7 @@ const SkillsPage = () => {
             <Heading as={"h1"} className="text-[35px]">
               Skills
             </Heading>
+            <Box as="div" className="border-b-2 border-primary w-1/5 group-hover:w-10/12"></Box>
           </Flex>
 
           <Flex
