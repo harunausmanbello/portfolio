@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as RadixIcon from "@radix-ui/react-icons";
 import Link from "next/link";
+import { AwardIcon, FilesIcon } from "lucide-react";
 import {
   Container,
   Section,
@@ -12,9 +13,7 @@ import {
 } from "@radix-ui/themes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { skills } from "@/data";
-import { Award, AwardIcon, BadgeCheck, Files, FilesIcon } from "lucide-react";
-import { SkillsLevel } from "./ui/skills-level";
+
 
 const AboutPage = () => {
   return (
@@ -45,13 +44,16 @@ const AboutPage = () => {
                   >
                     <AwardIcon />
                     <Heading as="h1" align={"center"} size={"5"}>
-                    Experience
+                      Experience
                     </Heading>
                   </Flex>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Text as="p" className="text-balance -mt-5  text-muted-foreground">
+                <Text
+                  as="p"
+                  className="text-balance -mt-5  text-muted-foreground"
+                >
                   3+ years of Experience
                 </Text>
               </CardContent>
@@ -72,7 +74,10 @@ const AboutPage = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Text as="p" className="text-balance -mt-5 text-muted-foreground">
+                <Text
+                  as="p"
+                  className="text-balance -mt-5 text-muted-foreground"
+                >
                   10+ Completed
                 </Text>
               </CardContent>

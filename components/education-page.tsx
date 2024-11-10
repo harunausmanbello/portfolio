@@ -8,11 +8,7 @@ import {
   Text,
   Box,
 } from "@radix-ui/themes";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { education, experience } from "@/data";
-import { BadgeCheck } from "lucide-react";
-import { SkillsLevel } from "./ui/skills-level";
-import { Button } from "./ui/button";
+import { education } from "@/data";
 
 const EducationPage = () => {
   return (

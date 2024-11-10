@@ -12,18 +12,11 @@ import {
   Text,
   Box,
 } from "@radix-ui/themes";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  AwardIcon,
-  BadgeCheck,
-  FilesIcon,
-  MailIcon,
-  PhoneIcon,
-} from "lucide-react";
-import { SkillsLevel } from "./ui/skills-level";
-import { Button } from "./ui/button";
-import { Input } from "@/components/ui/input";
 import { contactInfoUseForm } from "@/hooks";
+import { MailIcon, PhoneIcon } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const ContactPage = () => {

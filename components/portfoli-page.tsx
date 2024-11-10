@@ -1,5 +1,7 @@
 "use client";
 import * as React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Container, Section, Grid, Flex, Heading, Box } from "@radix-ui/themes";
 import {
   Card,
@@ -8,9 +10,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { portfolio } from "@/data";
-import { Button } from "./ui/button";
-import Link from "next/link";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const PortfolioPage = () => {

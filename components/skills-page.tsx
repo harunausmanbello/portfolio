@@ -8,15 +8,10 @@ import {
   Text,
   Box,
 } from "@radix-ui/themes";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skills } from "@/data";
 import { BadgeCheck } from "lucide-react";
-import { SkillsLevel } from "./ui/skills-level";
+import { SkillsLevel } from "@/components/ui/skills-level";
 
 const SkillsPage = () => {
   return (
@@ -33,7 +28,10 @@ const SkillsPage = () => {
             <Heading as={"h1"} className="text-[35px]">
               Skills
             </Heading>
-            <Box as="div" className="border-b-2 border-primary w-1/5 group-hover:w-10/12"></Box>
+            <Box
+              as="div"
+              className="border-b-2 border-primary w-1/5 group-hover:w-10/12"
+            ></Box>
           </Flex>
 
           <Flex
