@@ -40,7 +40,7 @@ export function createTransporter() {
 export async function sendMail(options: {
   from: string;
   subject: string;
-  html: any;
+  html: string;
 }) {
   const { from, subject, html } = options;
   const transporter = createTransporter();
