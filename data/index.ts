@@ -46,6 +46,10 @@ const portfolio = [
         websiteLink: "https://portal.iaec-university.tg/",
         gibhubLink: "#",
         image: "/portfolio/sms.png",
+        credentials: {
+          username: "",
+          password: "",
+        },
       },
       {
         name: "Certificate Verification System",
@@ -54,6 +58,10 @@ const portfolio = [
         gibhubLink:
           "https://github.com/harunausmanbello/certificate-verification-portal.git",
         image: "/portfolio/cvp.png",
+        credentials: {
+          username: "admin",
+          password: "Password!",
+        },
       },
       {
         name: "Ajibade & Ajibade Law Firm",
@@ -75,6 +83,10 @@ const portfolio = [
         gibhubLink:
           "https://github.com/harunausmanbello/security-alert-system.git",
         image: "/portfolio/sas.png",
+        credentials: {
+          username: "admin@admin.com",
+          password: "Password!",
+        },
       },
       {
         name: "Taskhub API",
@@ -82,6 +94,10 @@ const portfolio = [
         websiteLink: "https://taskhub-api.up.railway.app/",
         gibhubLink: "https://github.com/harunausmanbello/taskhub_API.git",
         image: "/portfolio/taskhub.png",
+        credentials: {
+          username: "harunarrasheeed@gmail.com",
+          password: "www123",
+        },
       },
     ],
   },

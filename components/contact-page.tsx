@@ -158,10 +158,10 @@ const ContactPage = () => {
                       await axios.post("/api/contact", {
                         data,
                       });
-                      toast.success("Email has been sent successfully.");
+                      toast.success("Message has been sent successfully.");
                       form.reset();
                     } catch {
-                      toast.error("Failed to send email. Please try again.");
+                      toast.error("Failed to send Message. Please try again.");
                     }
                   }
                 )}

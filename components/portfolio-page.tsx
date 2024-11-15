@@ -110,6 +110,7 @@ const PortfolioPage = () => {
                       technologiesUsed,
                       websiteLink,
                       gibhubLink,
+                      credentials,
                     }) => (
                       <Card
                         key={name}
@@ -118,7 +119,7 @@ const PortfolioPage = () => {
                         <CardHeader
                           onMouseEnter={() => setHoveredCardIndex(name)}
                           onMouseLeave={() => setHoveredCardIndex("")}
-                          className="bg-white min-h-40 rounded-sm relative"
+                          className="bg-white min-h-[150px] rounded-sm relative overflow-hidden"
                         >
                           <Image
                             src={`${image}`}
@@ -130,13 +131,23 @@ const PortfolioPage = () => {
                           />
                           <Box
                             as="div"
-                            className={`absolute size-full object-fill inset-0 rounded-sm bg-black text-white transition-opacity duration-300 ${
+                            className={`absolute flex flex-col text-justify items-center justify-center top-0 left-0 right-0 bottom-0 bg-black text-white transition-opacity duration-300 ${
                               hoveredCardIndex === name
-                                ? "opacity-100"
+                                ? "opacity-70"
                                 : "opacity-0"
                             }`}
+                            style={{
+                              margin: 0,
+                              padding: 0,
+                            }}
                           >
-                            {name}
+                            <Text as="p" size={"3"}>Login Details</Text>
+                            <Text as="p" size={"2"}>
+                              Username: {credentials?.username}
+                            </Text>
+                            <Text as="p" size={"2"}>
+                              Password: {credentials?.password}
+                            </Text>
                           </Box>
                         </CardHeader>
                         <CardContent className="flex-grow">
@@ -166,13 +177,17 @@ const PortfolioPage = () => {
                               variant={"ghost"}
                               asChild
                             >
-                              <Link href={gibhubLink || "#"} target="_blank">Github</Link>
+                              <Link href={gibhubLink || "#"} target="_blank">
+                                Github
+                              </Link>
                             </Button>
                             <Button
                               className="w-full bg-[#0f172a] hover:border hover:border-[#0f172a] hover:text-[#0f172a]"
                               asChild
                             >
-                              <Link href={websiteLink || "#"} target="_blank">Website</Link>
+                              <Link href={websiteLink || "#"} target="_blank">
+                                Link
+                              </Link>
                             </Button>
                           </Box>
                         </CardFooter>
