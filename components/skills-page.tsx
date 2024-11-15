@@ -17,7 +17,7 @@ const SkillsPage = () => {
   return (
     <Container
       id={"skills"}
-      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+      className="min-h-fit bg-[#0f172a]/95 text-primary group pt-10"
     >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
@@ -42,25 +42,25 @@ const SkillsPage = () => {
             align={"center"}
             justify={"center"}
             gridColumn={{ initial: "1", sm: "2 / span 3" }}
-            className="px-5"
+            px={"5"}
           >
-            <Grid columns={{ initial: "1", xs: "2", md: "3" }} gap="3">
-              {skills.map((item, index) => (
-                <Card key={index} className="shadow-2xl h-fit bg-slate-100">
+            <Grid columns={{ initial: "1", xs: "2" }} gap="9" width={"100%"}>
+              {skills.map(({ category, skills }) => (
+                <Card key={category} className="shadow-2xl h-fit bg-slate-100">
                   <CardHeader>
                     <CardTitle>
                       <Heading as="h1" align={"center"} size={"5"}>
-                        {item.category}
+                        {category}
                       </Heading>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    {item.skills.map((skillItem, skillIndex) => (
-                      <Flex key={skillIndex}>
+                    {skills.map(({ skill, level }) => (
+                      <Flex key={skill}>
                         <Text className="flex items-center gap-0.5 font-bold w-full">
-                          <BadgeCheck className="w-3.5 h-3.5 text-primary" />
-                          {skillItem.skill}
-                          <SkillsLevel starCount={skillItem.level || 0} />
+                          <BadgeCheck className="w-4 h-4 text-primary" />
+                          {skill}
+                          <SkillsLevel starCount={level || 0} />
                         </Text>
                       </Flex>
                     ))}

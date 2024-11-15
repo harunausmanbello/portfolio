@@ -1,8 +1,10 @@
 "use client";
 import * as React from "react";
 import * as Form from "@/components/ui/form";
-import * as Schema from "@/schemas";
+import * as Schema from "@/app/_schemas";
 import * as ReactIcon from "react-icons/fa";
+import Link from "next/link";
+import axios from "axios";
 import {
   Container,
   Section,
@@ -11,21 +13,21 @@ import {
   Heading,
   Text,
   Box,
+  Button,
 } from "@radix-ui/themes";
 import { contactInfoUseForm } from "@/hooks";
 import { MailIcon, PhoneIcon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Link from "next/link";
+import { toast } from "sonner";
 
 const ContactPage = () => {
   const form = contactInfoUseForm();
   return (
     <Container
       id={"contact"}
-      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+      className="min-h-fit bg-[#0f172a]/100 text-primary group pt-10"
     >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
@@ -152,7 +154,15 @@ const ContactPage = () => {
               <form
                 onSubmit={form.handleSubmit(
                   async (data: Schema.contactInfoType) => {
-                    console.log({ data });
+                    try {
+                      await axios.post("/api/contact", {
+                        data,
+                      });
+                      toast.success("Email has been sent successfully.");
+                      form.reset();
+                    } catch {
+                      toast.error("Failed to send email. Please try again.");
+                    }
                   }
                 )}
                 className="flex flex-col justify-center space-y-8 w-full"
@@ -229,7 +239,16 @@ const ContactPage = () => {
                     </Form.FormItem>
                   )}
                 />
-                <Button>SEND MESSAGE</Button>
+
+                <Button
+                  loading={form.formState.isSubmitting}
+                  className="bg-primary text-[#0f172a]"
+                  radius="large"
+                  type="submit"
+                  disabled={form.formState.isSubmitting}
+                >
+                  SEND MESSAGE
+                </Button>
               </form>
             </Form.Form>
           </Flex>

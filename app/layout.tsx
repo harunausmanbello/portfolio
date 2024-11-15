@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Theme } from "@radix-ui/themes";
+import Transition from "@/components/ui/transition";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0f172a]`}
       >
-        <Theme>{children}</Theme>
+        <Toaster closeButton />
+
+        <Transition>
+          <Theme>{children}</Theme>
+        </Transition>
       </body>
     </html>
   );

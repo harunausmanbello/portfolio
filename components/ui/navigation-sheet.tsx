@@ -5,20 +5,19 @@ import * as Sheet from "@/components/ui/sheet";
 import Link from "next/link";
 import { Box, Flex } from "@radix-ui/themes";
 import { menuList } from "@/data";
+import { useWindowWidth } from "@react-hook/window-size";
 
 export default function NavigationSheet() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const widthSize = useWindowWidth();
+  const isDesktop = widthSize >= 768;
 
   React.useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false);
-      }
-    };
+    if (isDesktop && isOpen) {
+      setIsOpen(false);
+    }
+  }, [isDesktop, isOpen]);
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <Sheet.Sheet open={isOpen} onOpenChange={setIsOpen}>
       <Sheet.SheetTrigger asChild>
@@ -30,9 +29,11 @@ export default function NavigationSheet() {
           <span className="sr-only">Toggle navigation menu</span>
         </Box>
       </Sheet.SheetTrigger>
-      <Sheet.SheetContent>
-        <Sheet.SheetHeader className="border-b mb-5">
-          <Sheet.SheetTitle>Haruna Usman Bello</Sheet.SheetTitle>
+      <Sheet.SheetContent side={"top"} className="bg-primary/90 text-[#0f172a]">
+        <Sheet.SheetHeader className="border-b mb-5 border-[#0f172a] text-[#0f172a]">
+          <Sheet.SheetTitle className="text-[#0f172a]">
+            Haruna Usman Bello
+          </Sheet.SheetTitle>
           <Sheet.SheetDescription className="sr-only">
             Navigation menu
           </Sheet.SheetDescription>
@@ -40,14 +41,14 @@ export default function NavigationSheet() {
         <Flex
           as="div"
           direction={"column"}
-          align={"baseline"}
+          align={"center"}
           justify={"center"}
           className="gap-8"
         >
-          {menuList.map((item, index) => (
-            <Sheet.SheetClose asChild key={item.label}>
-              <Link key={index} href={item.href}>
-                {item.label}
+          {menuList.map(({ slug, label }) => (
+            <Sheet.SheetClose asChild key={slug}>
+              <Link key={slug} href={`#${slug}`}>
+                {label}
               </Link>
             </Sheet.SheetClose>
           ))}

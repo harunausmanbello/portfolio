@@ -15,7 +15,7 @@ const ExperiencePage = () => {
   return (
     <Container
       id={"resume"}
-      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+      className="min-h-fit bg-[#0f172a]/95 text-primary group pt-10"
     >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>

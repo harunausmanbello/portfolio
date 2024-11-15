@@ -18,7 +18,7 @@ const AboutPage = () => {
   return (
     <Container
       id={"about"}
-      className="min-h-fit bg-[#0f172a]/95 text-primary group"
+      className="min-h-fit bg-[#0f172a]/95 text-primary group pt-10"
     >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
@@ -56,7 +56,7 @@ const AboutPage = () => {
                   as="p"
                   className="text-balance -mt-5  text-muted-foreground"
                 >
-                  3+ years of Experience
+                  1+ years of Experience
                 </Text>
               </CardContent>
             </Card>
@@ -80,7 +80,7 @@ const AboutPage = () => {
                   as="p"
                   className="text-balance -mt-5 text-muted-foreground"
                 >
-                  10+ Completed
+                  5+ Completed
                 </Text>
               </CardContent>
             </Card>
@@ -108,7 +108,7 @@ const AboutPage = () => {
               that drive measurable results, such as automating payment
               workflows for large-scale cash transfer programs and developing
               school management platforms that streamline administrative tasks
-              for hundreds of students. My experience spans across multiple
+              for thousands of students. My experience spans across multiple
               industries, where I&apos;ve consistently improved operational
               efficiencies, enhanced user experiences, and optimized system
               performance.

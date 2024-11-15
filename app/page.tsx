@@ -8,6 +8,7 @@ import ExperiencePage from "@/components/experience-page";
 import EducationPage from "@/components/education-page";
 import ContactPage from "@/components/contact-page";
 import Footer from "@/components/footer";
+import Transition from "@/components/ui/transition";
 
 export default function Home() {
   return (

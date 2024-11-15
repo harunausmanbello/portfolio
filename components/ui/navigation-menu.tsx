@@ -1,36 +1,35 @@
 "use client";
+import * as React from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import NextLink from "next/link";
-import { usePathname } from "next/navigation";
 import { menuList } from "@/data";
-import { ReactNode } from "react";
+import useDetectScroll, { Axis } from "@smakss/react-scroll-direction";
 
-interface LinkProps {
-  href: string;
-  [key: string]: ReactNode;
-}
-
-const Link: React.FC<LinkProps> = ({ href, ...props }) => {
-  const pathname = usePathname();
-  const isActive = href === pathname;
+export const NavMenu = () => {
+  const { scrollPosition } = useDetectScroll({ axis: Axis.Y });
+  const isScrolled = scrollPosition.top > 0;
+  const [activeMenuSlug, setActiveMenuSlug] = React.useState(menuList[0].slug);
 
   return (
-    <NavigationMenu.Link asChild active={isActive}>
-      <NextLink href={href} className="NavigationMenuLink" {...props} />
-    </NavigationMenu.Link>
+    <NavigationMenu.Root className="hidden md:block ml-auto">
+      <NavigationMenu.List className="flex gap-10 items-center ">
+        {menuList.map(({ slug, label }) => (
+          <NavigationMenu.Item key={slug}>
+            <NavigationMenu.Link
+              className={`${
+                activeMenuSlug === slug &&
+                `border-b-2 pb-1 ${
+                  isScrolled ? "border-[#0f172a]" : "border-primary"
+                }`
+              }`}
+              key={slug}
+              href={`#${slug}`}
+              onClick={() => setActiveMenuSlug(slug)}
+            >
+              {label}
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
+        ))}
+      </NavigationMenu.List>
+    </NavigationMenu.Root>
   );
 };
-
-export const NavMenu = () => (
-  <NavigationMenu.Root className="hidden md:block ml-auto">
-    <NavigationMenu.List className="flex gap-10 items-center ">
-      {menuList.map((item, index) => (
-        <NavigationMenu.Item key={item.href}>
-          <Link key={index} href={item.href}>
-            {item.label}
-          </Link>
-        </NavigationMenu.Item>
-      ))}
-    </NavigationMenu.List>
-  </NavigationMenu.Root>
-);

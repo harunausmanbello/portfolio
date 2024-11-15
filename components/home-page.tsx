@@ -4,7 +4,7 @@ import * as RadixIcon from "@radix-ui/react-icons";
 import Link from "next/link";
 import { Container, Section, Grid, Flex, Heading } from "@radix-ui/themes";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const HomePage = () => {
   return (
@@ -90,7 +90,6 @@ const HomePage = () => {
           >
             <Avatar className="w-full h-full">
               <AvatarImage src="picture.png" alt="picture" />
-              <AvatarFallback>Picture</AvatarFallback>
             </Avatar>
           </Flex>
         </Grid>

@@ -23,10 +23,12 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const PortfolioPage = () => {
   const [selectedTab, setSelectedTab] = React.useState("all");
+  const [hoveredCardIndex, setHoveredCardIndex] = React.useState<string>("");
+
   return (
     <Container
       id={"portfolio"}
-      className="min-h-fit bg-[#0f172a]/100 text-primary group"
+      className="min-h-fit bg-[#0f172a]/100 text-primary group pt-10"
     >
       <Section>
         <Grid columns={{ initial: "1", sm: "4" }}>
@@ -96,69 +98,87 @@ const PortfolioPage = () => {
             >
               {portfolio
                 .filter(
-                  (item) =>
+                  ({ category }) =>
                     selectedTab === "all" ||
-                    item.category.toLowerCase() === selectedTab
+                    category.toLowerCase() === selectedTab
                 )
-                .map((item, index) =>
-                  item.project.map((projectItems, projectIndex) => (
-                    <Card
-                      key={`${index}-${projectIndex}`}
-                      className="shadow-2xl bg-primary p-2 min-w-full flex flex-col"
-                    >
-                      <CardHeader className="bg-white min-h-40 rounded-sm relative">
-                        <Image
-                          src={`${projectItems.image}`}
-                          className="object-fill"
-                          alt="project preview"
-                          fill
-                          priority
-                          sizes="100"
-                        />
-                      </CardHeader>
-                      <CardContent className="flex-grow">
-                        <Heading
-                          as="h1"
-                          align={"left"}
-                          size={"2"}
-                          className="pt-4"
+                .map(({ project }) =>
+                  project.map(
+                    ({
+                      name,
+                      image,
+                      technologiesUsed,
+                      websiteLink,
+                      gibhubLink,
+                    }) => (
+                      <Card
+                        key={name}
+                        className="shadow-2xl bg-primary p-2 min-w-full flex flex-col"
+                      >
+                        <CardHeader
+                          onMouseEnter={() => setHoveredCardIndex(name)}
+                          onMouseLeave={() => setHoveredCardIndex("")}
+                          className="bg-white min-h-40 rounded-sm relative"
                         >
-                          {projectItems.name}
-                        </Heading>
-                        <Text
-                          as="p"
-                          className="text-xs text-gray-500 text-justify"
-                        >
-                          Technologies:{" "}
-                          {projectItems.technologiesUsed.join(", ")}
-                        </Text>
-                      </CardContent>
-                      <CardFooter className="w-full p-0 gap-5">
-                        <Box
-                          as="div"
-                          className="flex items-center justify-between w-full gap-5 bottom-0"
-                        >
-                          <Button
-                            className="w-full border border-[#0f172a] hover:bg-[#0f172a] hover:text-white"
-                            variant={"ghost"}
-                            asChild
+                          <Image
+                            src={`${image}`}
+                            className="object-fill "
+                            alt="project preview"
+                            fill
+                            priority
+                            sizes="100"
+                          />
+                          <Box
+                            as="div"
+                            className={`absolute size-full object-fill inset-0 rounded-sm bg-black text-white transition-opacity duration-300 ${
+                              hoveredCardIndex === name
+                                ? "opacity-100"
+                                : "opacity-0"
+                            }`}
                           >
-                            <Link href={projectItems.gibhubLink || "#"}>
-                              Github
-                            </Link>
-                          </Button>
-                          <Button
-                            className="w-full bg-[#0f172a] hover:border hover:border-[#0f172a] hover:text-[#0f172a]"
-                            asChild
+                            {name}
+                          </Box>
+                        </CardHeader>
+                        <CardContent className="flex-grow">
+                          <Heading
+                            as="h1"
+                            align={"left"}
+                            size={"2"}
+                            className="pt-4"
                           >
-                            <Link href={projectItems.websiteLink || "#"}>
-                              Website
-                            </Link>
-                          </Button>
-                        </Box>
-                      </CardFooter>
-                    </Card>
-                  ))
+                            {name}
+                          </Heading>
+                          <Text
+                            as="p"
+                            className="text-xs text-gray-500 text-justify"
+                          >
+                            Technologies: {technologiesUsed.join(", ")}
+                          </Text>
+                        </CardContent>
+
+                        <CardFooter className="w-full p-0 gap-5 ">
+                          <Box
+                            as="div"
+                            className="flex items-center justify-between w-full gap-5 bottom-0"
+                          >
+                            <Button
+                              className="w-full border border-[#0f172a] hover:bg-[#0f172a] hover:text-white"
+                              variant={"ghost"}
+                              asChild
+                            >
+                              <Link href={gibhubLink || "#"} target="_blank">Github</Link>
+                            </Button>
+                            <Button
+                              className="w-full bg-[#0f172a] hover:border hover:border-[#0f172a] hover:text-[#0f172a]"
+                              asChild
+                            >
+                              <Link href={websiteLink || "#"} target="_blank">Website</Link>
+                            </Button>
+                          </Box>
+                        </CardFooter>
+                      </Card>
+                    )
+                  )
                 )}
             </Grid>
           </Flex>

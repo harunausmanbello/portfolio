@@ -1,10 +1,10 @@
 const menuList = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#resume", label: "Resume" },
-  { href: "#contact", label: "Contact" },
+  { slug: "home", label: "Home" },
+  { slug: "about", label: "About" },
+  { slug: "skills", label: "Skills" },
+  { slug: "portfolio", label: "Portfolio" },
+  { slug: "resume", label: "Resume" },
+  { slug: "contact", label: "Contact" },
 ];
 
 const skills = [
@@ -16,17 +16,6 @@ const skills = [
       { skill: "PHP", level: 3.5 },
       { skill: "C#", level: 3 },
       { skill: "Python", level: 2 },
-    ],
-  },
-  {
-    category: "Soft Skills",
-    skills: [
-      { skill: "Adaptability", level: 4 },
-      { skill: "Problem Solving", level: 4 },
-      { skill: "Time Management", level: 4.5 },
-      { skill: "Team Collaboration", level: 4 },
-      { skill: "Continuous Learning", level: 5 },
-      { skill: "Strong Communication", level: 3.5 },
     ],
   },
   {
@@ -52,56 +41,47 @@ const portfolio = [
     category: "Web",
     project: [
       {
-        name: "Web 1",
-        technologiesUsed: ["Nodejs", "PostgreSQL","PostgreSQL","PostgreSQL"],
+        name: "School Management System",
+        technologiesUsed: ["PHP", "JavaScript", "Bootstrap", "MySQL"],
         websiteLink: "https://portal.iaec-university.tg/",
-        gibhubLink: "C#",
-        image: "/project-picture.png",
+        gibhubLink: "#",
+        image: "/portfolio/sms.png",
       },
       {
-        name: "Web 2",
-        technologiesUsed: ["React", "Nodejs"],
-        websiteLink: "example.com",
-        gibhubLink: "github.com/example",
-        image: "/project-picture.png",
-      },
-    ],
-  },
-  {
-    category: "Mobile",
-    project: [
-      {
-        name: "Mobile 1",
-        technologiesUsed: ["TypeScript", "MySQL"],
-        websiteLink: "PHP",
-        gibhubLink: "C#",
-        image: "/project-picture.png",
+        name: "Certificate Verification System",
+        technologiesUsed: ["PHP", "JavaScript", "Bootstrap", "MySQL"],
+        websiteLink: "http://cvp.a0001.net",
+        gibhubLink:
+          "https://github.com/harunausmanbello/certificate-verification-portal.git",
+        image: "/portfolio/cvp.png",
       },
       {
-        name: "Mobile 2",
-        technologiesUsed: ["Flutter", "Firebase"],
-        websiteLink: "example.com",
-        gibhubLink: "github.com/example",
-        image: "/project-picture.png",
-      },
-    ],
-  },
-  {
-    category: "Desktop",
-    project: [
-      {
-        name: "Desktop 1",
-        technologiesUsed: ["TypeScript", "MongoDb"],
-        websiteLink: "localhost:3000",
-        gibhubLink: "localhost:3000",
-        image: "/project-picture.png",
+        name: "Ajibade & Ajibade Law Firm",
+        technologiesUsed: ["Next.js", "Tailwind"],
+        websiteLink: "https://ajibade-and-ajibade.vercel.app/",
+        gibhubLink: "#",
+        image: "/portfolio/ajibade.png",
       },
       {
-        name: "Desktop 2",
-        technologiesUsed: ["Electron", "Nodejs"],
-        websiteLink: "example.com",
-        gibhubLink: "github.com/example",
-        image: "/project-picture.png",
+        name: "Security Alert System",
+        technologiesUsed: [
+          "Next.js",
+          "MySQL",
+          "Prisma",
+          "Next-auth",
+          "Tailwind",
+        ],
+        websiteLink: "https://security-alert.vercel.app/",
+        gibhubLink:
+          "https://github.com/harunausmanbello/security-alert-system.git",
+        image: "/portfolio/sas.png",
+      },
+      {
+        name: "Taskhub API",
+        technologiesUsed: ["Node.js", "Express", "MongoDB", "Mongoose", "JWT"],
+        websiteLink: "https://taskhub-api.up.railway.app/",
+        gibhubLink: "https://github.com/harunausmanbello/taskhub_API.git",
+        image: "/portfolio/taskhub.png",
       },
     ],
   },
@@ -109,36 +89,12 @@ const portfolio = [
 
 const experience = [
   {
-    duration: "2022-2023",
-    company: "TechWave Solutions",
-    role: "Full Stack Developer",
-    technologies: ["Node.js", "React.js", "Express", "MongoDB"],
+    duration: "2023–2024",
+    company: "UREBA CAFÉ TECHNOLOGIES, Abuja, Nigeria",
+    role: "Project Officer (Consultant)",
+    technologies: [],
     description:
-      "As a Full Stack Developer at TechWave Solutions, I led the development of dynamic web applications using modern JavaScript frameworks. My responsibilities included full-stack development, including front-end design and back-end architecture, database management with MongoDB, and integrating third-party APIs to improve functionality. I collaborated with cross-functional teams to deliver scalable and user-centric solutions that met client requirements.",
-  },
-  {
-    duration: "2021-2022",
-    company: "DigitalSoft Innovations",
-    role: "Backend Developer",
-    technologies: ["Node.js", "Express", "MySQL", "Redis"],
-    description:
-      "As a Backend Developer at DigitalSoft Innovations, I focused on building and optimizing server-side systems. I streamlined data processing, improved API performance, and enhanced security protocols. I worked with databases such as MySQL, and implemented Redis for caching to improve data retrieval times, ensuring high availability and scalability of services to handle increasing user loads.",
-  },
-  {
-    duration: "2019-2020",
-    company: "SmartTech Hub",
-    role: "Junior Developer",
-    technologies: ["Node.js", "React.js", "Redux", "CSS"],
-    description:
-      "I began my career as a Junior Developer at SmartTech Hub, where I contributed to both front-end and back-end development. I worked on building and maintaining web applications, resolving bugs, and optimizing performance. Additionally, I assisted in writing test cases to ensure code quality and participated in regular code reviews, learning industry best practices and development standards.",
-  },
-  {
-    duration: "2018-2019",
-    company: "CodeCraft Studios",
-    role: "Intern Developer",
-    technologies: ["Node.js", "React.js", "Git"],
-    description:
-      "During my internship at CodeCraft Studios, I gained practical experience in web development and software engineering. I supported senior developers with coding tasks, assisted with version control using Git, and worked on developing basic applications. This role was essential in shaping my foundational knowledge of coding practices and preparing me for a career in software development.",
+      "As a Project Officer at UREBA CAFÉ TECHNOLOGIES, I designed and implemented digital systems for large-scale cash transfer programs, automating payment workflows, data validation, and reporting for over 90,000+ beneficiaries across Kano and Borno States. My key achievements include the development and deployment of a payment system that enabled 100% automated disbursements, improving data accuracy by 90% and reducing processing time by 70%. I also enhanced a digital data validation tool, increasing operational efficiency by 85%, and validated data for 42,000 beneficiaries with 95% completeness. Additionally, I compiled the Borno State CCT Agile Beneficiary Register with 98% data accuracy.",
   },
 ];
 

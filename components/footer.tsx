@@ -12,7 +12,7 @@ const Footer = () => {
         justify={"between"}
       >
         <Text as="p" className="flex items-center gap-1" size={"2"}>
-          Copyright <LucideIcon.Copyright size={12} /> 2023 Haruna Usman Bello.
+          Copyright <LucideIcon.Copyright size={12} /> 2024 Haruna Usman Bello.
         </Text>
         <Text as="p" size={"2"}>
           Designed and Developed by <Strong>Haruna Usman Bello</Strong>
